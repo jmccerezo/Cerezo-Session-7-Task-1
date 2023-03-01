@@ -117,7 +117,7 @@ class Form extends Component {
               onChange={this.handleChange}
               value={this.state.name}
             />
-            <p style={{ color: "red" }}>{this.state.error.nameError}</p>
+            <p className="error-msg">{this.state.error.nameError}</p>
             <TextField
               id="job"
               label="Job"
@@ -126,7 +126,7 @@ class Form extends Component {
               onChange={this.handleChange}
               value={this.state.job}
             />
-            <p style={{ color: "red" }}>{this.state.error.jobError}</p>
+            <p className="error-msg">{this.state.error.jobError}</p>
             <Button variant="contained" onClick={this.handleSubmit}>
               Register
             </Button>

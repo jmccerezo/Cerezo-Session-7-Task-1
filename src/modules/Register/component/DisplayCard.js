@@ -8,10 +8,15 @@ export default function DisplayCard({ users }) {
   const usersList = users.length ? (
     users.map((user) => {
       return (
-        <div
-          style={{ display: "flex", justifyContent: "center", padding: "20px" }}
-        >
-          <Card sx={{ width: 350, maxWidth: 450 }} key={user.id}>
+        <div className="card-container" key={user.id}>
+          <Card
+            sx={{
+              width: 350,
+              maxWidth: 450,
+              borderRadius: "20px",
+              backgroundColor: "whitesmoke",
+            }}
+          >
             <CardActionArea>
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
@@ -27,7 +32,9 @@ export default function DisplayCard({ users }) {
       );
     })
   ) : (
-    <></>
+    <div>
+      <h3 className="no-user-text">No registered users yet</h3>
+    </div>
   );
 
   return <>{usersList}</>;

@@ -11,16 +11,15 @@ class Users extends Component {
     const usersList = this.props.users.length ? (
       this.props.users.map((user) => {
         return (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "20px",
-            }}
-          >
-            <Card sx={{ width: 350, maxWidth: 450 }} key={user.id}>
+          <div className="card-container" key={user.id}>
+            <Card
+              sx={{
+                width: 350,
+                maxWidth: 450,
+                borderRadius: "20px",
+                backgroundColor: "whitesmoke",
+              }}
+            >
               <CardActionArea>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
@@ -36,20 +35,17 @@ class Users extends Component {
         );
       })
     ) : (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "20px",
-        }}
-      >
-        <h1>No Registered Users</h1>
+      <div>
+        <h3 className="no-user-text">No registered users yet</h3>
       </div>
     );
 
-    return <>{usersList}</>;
+    return (
+      <>
+        <h1 style={{ textAlign: "center" }}>Users</h1>
+        {usersList}
+      </>
+    );
   }
 }
 
